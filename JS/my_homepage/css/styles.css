@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  background-color: red;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.container {
+  text-align: center;
+  color: white;
+}
+
+.container h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.game1 {
+  text-align: center;
+}
+
+.game2 > img {
+  background-color: white;
+}
