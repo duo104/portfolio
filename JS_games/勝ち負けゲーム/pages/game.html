@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>勝ち負けゲーム</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const num = 5;
+      var winner = Math.floor(Math.random() * num);
+      var surrender = Math.floor(Math.random() * num);
+
+      while (winner === surrender) {
+        var winner = Math.floor(Math.random() * num);
+        var surrender = Math.floor(Math.random() * num)
+      }
+
+      for (let i = 0; i < num; i++) {
+        const div = document.createElement("div");
+        div.classList.add("box");
+        div.addEventListener("click", () => {
+          if ( i === winner ) {
+            div.textContent = "Win!";
+            div.classList.add("win")
+          } else if (i === surrender ) {
+              div.textContent = "Surrender!";
+              div.classList.add("surrenderr")
+          } else {
+            div.textContent = "Lose!";
+            div.classList.add("lose")
+          }
+        });
+
+        document.body.appendChild(div);
+      }
+    </script>
+  </body>
+</html>
