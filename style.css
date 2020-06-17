@@ -153,9 +153,6 @@ ul, li {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #2c2c2f;
-    background: ;/*背景色*/
 }
 
 #about .two-column-image {
@@ -242,10 +239,6 @@ ul, li {
   width: 100px;
 }
 
-/*--------------------------------
- CONTACT
----------------------------------*/
-
 #contact .contact-list {
   padding: 20px 0;
 }
@@ -253,16 +246,10 @@ ul, li {
 #contact .contact-list ul {
   width: 40%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   align-self: flex-end;
-  ;
 }
 
 #contact .contact-list li {
@@ -283,9 +270,6 @@ ul, li {
   font-weight: bold;
 }
 
-/*--------------------------------
- Footer
----------------------------------*/
 
 #footer {
   background-color: #333;
@@ -297,13 +281,7 @@ ul, li {
 
 #footer .footer-link ul {
   margin-bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
   justify-content: center;
 }
 
@@ -322,9 +300,6 @@ ul, li {
   color: #8c8c8c;
   text-align: center;
 }
-
-/*media Queries 767
-----------------------------------------------------*/
 
 @media screen and (max-width: 767px) {
   body {
@@ -366,7 +341,6 @@ ul, li {
   }
   #latestworks .two-column-wrapper {
     width: 100%;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   #latestworks .two-column-image {
@@ -388,7 +362,6 @@ ul, li {
   }
   #about .two-column-wrapper {
     width: 100%;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   #about .two-column-image {
@@ -459,13 +432,11 @@ ul, li {
   }
 
  .profile img {
-  /* border-radius: 50%; 
+  /* border-radius: 50%;
   border: 4px solid GREEN; */
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
     object-fit: cover; /* ADD */
  }
 }
@@ -479,9 +450,6 @@ ul, li {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    object-fit: cover; /* ADD */
 }
 
 .section-title-css{
@@ -490,10 +458,4 @@ ul, li {
 
 .table{
   text-align: center;
-}
-
-@media only screen and (max-width: 540px) {
-  #gnav li {
-    font-size: 8px;
-  }
 }
