@@ -1,20 +1,9 @@
-/* CSS Document */
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
+body {
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-body {
-  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  color: #333;
-  font-size: 15px;
-  line-height: 1.8;
-  letter-spacing: 0.8px;
-  word-break: break-all;
+#wrapper {
+  background-color: #f3f3f3;
 }
 
 a {
@@ -22,16 +11,7 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:hover img {
-  opacity: .8;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
-}
-
-img, video, object {
+img {
   max-width: 100%;
   height: auto;
   border: none;
@@ -43,59 +23,12 @@ ul, li {
   list-style: none;
 }
 
-/*--------------------------------
-　全体
----------------------------------*/
-
-#wrapper {
-  background-color: #f3f3f3;
-}
-
-.inner {
-  max-width: 1320px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-#contents {
-  /* padding: 100px 0; */
-}
-
-/*--------------------------------
-　ヘッダー
----------------------------------*/
-
 #header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
   align-items: center;
   height: 480px;
   background-size: auto 100%;
   background: url(img/sora.jpg) center center;
-}
-
-#header .logo {
-  display: block;
-}
-
-#header .logo-name {
-  display: block;
-  font-family: 'Yesteryear', cursive;
-  display: block;
-  position: relative;
-  top: -8px;
-  left: -60px;
-  font-size: 36px;
-  color: #d59fea;
-  -webkit-transform: rotate(-10deg);
-  transform: rotate(-10deg);
 }
 
 #header .logo-title {
@@ -112,16 +45,6 @@ ul, li {
   text-align: center;
   margin-top: 30px;
   color: #808080;
-}
-
-/*--------------------------------
-　グローバルナビ
----------------------------------*/
-
-#gnav {
-  padding: 10px;
-  font-family: 'Open sans', sans-serif;
-  z-index: 100;
 }
 
 #gnav ul {
@@ -158,18 +81,7 @@ ul, li {
   width: 100%;
   background-color: #f3f3f3;
   box-shadow: 0px 6px 3px -3px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0px 6px 3px -3px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 6px 3px -3px rgba(0, 0, 0, 0.2);
   transform: translate3d(0, 0, 0);
-}
-
-/*--------------------------------
-　Section
----------------------------------*/
-
-.section .inner {
-  /* padding: 80px 10px; */
-  padding: 80px 10px 10px 0px;
 }
 
 .section .section-title-block {
@@ -195,13 +107,8 @@ ul, li {
   width: 80%;
   margin: 0 auto;
   padding: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -211,30 +118,6 @@ ul, li {
 
 .two-column-image img {
   margin: 0 auto;
-}
-
-.two-column-desc {
-  width: 62%;
-}
-
-/*--------------------------------
-　Latestworks
----------------------------------*/
-
-#latestworks .two-column-image {
-  width: 48%;
-}
-
-#latestworks .two-column-desc {
-  width: 48%;
-}
-
-/*--------------------------------
-　WORKS
----------------------------------*/
-
-#works .card {
-  width: 32%;
 }
 
 #works .card {
@@ -266,19 +149,14 @@ ul, li {
 
 #works .card-wrapper {
   padding: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #2c2c2f;
+    background: ;/*背景色*/
 }
-
-/*--------------------------------
-　About
----------------------------------*/
 
 #about .two-column-image {
   width: 33%;
@@ -288,52 +166,21 @@ ul, li {
   width: 62%;
 }
 
-/*--------------------------------
- SKILL
----------------------------------*/
-
 #skill .card-wrapper {
   width: 80%;
   margin: 0 auto;
   padding: 20px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 #skill .card {
   flex-basis: 46%;
   margin-bottom: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-#skill .card:first-child {
-  flex-basis: 100%;
-}
-
-#skill .skill-icon {
-  flex-basis: 75px;
-}
-
-#skill .skill-icon img {
-  width: 75px;
-}
-
-#skill .skill-desc {
-  flex-basis: calc(100% - 75px - 30px);
-  text-align: center;
 }
 
 #skill .skill-desc-title {
