@@ -1,47 +1,52 @@
 from selenium import webdriver
 from time import sleep
-from bs4 import BeautifulSoup
 import requests
-
-username = input("usernameを入力してください > ")
-pw       = input("passwordを入力してください > ")
 
 class InstaBot:
   def __init__(self, username, pw):
+    self.username = username
+    self.pw       = pw     
     self.driver = webdriver.Chrome()
     self.driver.get("https://instagram.com")
     sleep(2)
-    self.driver.find_element_by_xpath("//input[@name=\"username\"]")\
-            .send_keys(username)
-    self.driver.find_element_by_xpath("//input[@name=\"password\"]")\
-            .send_keys(pw)
-    self.driver.find_element_by_xpath('//button[@type="submit"]')\
-            .click()
-    sleep(4)
-    self.driver.find_element_by_xpath("//button[contains(text(), '後で')]")\
-            .click()
-    sleep(2)
-    self.driver.find_element_by_xpath("//button[contains(text(), '後で')]")\
-            .click()                 
+
+  def login(self):
+    driver = self.driver      
+    driver.find_element_by_xpath("//input[@name=\"username\"]")\
+            .send_keys(self.username)
+    driver.find_element_by_xpath("//input[@name=\"password\"]")\
+            .send_keys(self.pw)
+    driver.find_element_by_xpath('//button[@type="submit"]').click()
     sleep(2)
 
-  def soup_initialize():
-    tag = input("検索するタグを入力して下さい > ")
-    r   = requests.get("https://www.instagram.com/explore/tags/{}".format(tag))
-    soup = BeautifulSoup(r.text, "html.parser")
-    soup.find_all("a")
-
-  def auto_like(self):
-    self.bot.soup_initialize
+  def auto_like(self, hashtag):
+    driver = self.driver      
+    self.hashtag = hashtag      
+    driver.get("https://www.instagram.com/explore/tags/{}".format(hashtag))
     sleep(2)
-    self.driver.get("https://www.instagram.com/explore/tags/{}".format(tag))
-    sleep(2)
-    self.driver.findElement(By.className("wp06b")).click();
-    sleep(2)
-    
 
-
-
-
-bot = InstaBot(username=username, pw=pw)
-bot.auto_like()
+    pic_hrefs = []
+    for i in range(1, 7):
+            try:
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                sleep(2)    
+                hrefs_in_view = driver.find_elements_by_tag_name('a')
+                hrefs_in_view = [elem.get_attribute('href') for elem in hrefs_in_view
+                                if '.com/p/' in elem.get_attribute('href')]
+                [pic_hrefs.append(href) for href in hrefs_in_view if href not in pic_hrefs]        
+            except Exception:
+                    continue
+     
+    print(pic_hrefs)               
+ 
+    unique_photos = len(pic_hrefs)
+    for pic_href in pic_hrefs:
+            driver.get(pic_href)
+            sleep(2)
+            try:
+                sleep(2)
+                like_button = driver.find_element_by_xpath('//button[@class="wpO6b "]').click()
+                like_button().click()
+            except Exception as e:
+                sleep(2)
+            unique_photos -= 1

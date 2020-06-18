@@ -1,0 +1,5 @@
+bot = InstaBot(username="インスタID", pw="インスタPW")
+bot.login()
+bot.auto_like("検索したいハッシュタグ")
+
+という様にしてください 
