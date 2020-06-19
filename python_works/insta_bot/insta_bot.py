@@ -19,6 +19,28 @@ class InstaBot:
     driver.find_element_by_xpath('//button[@type="submit"]').click()
     sleep(2)
 
+  def closeBrowser(self):
+    self.driver.close() 
+
+  def auto_suggested_follow(self):
+           driver = self.driver
+           driver.get('https://www.instagram.com/explore/people/suggested/')
+           
+           name_list = []
+           for i in range(1, 7):
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                sleep(2)
+                tag = driver.find_elements_by_tag_name('img')
+                for elem in tag:
+                        alt = elem.get_attribute('alt')
+                        alt = alt.strip('のプロフィール写真')
+                        name_list.append(alt)
+           print(name_list)
+
+           for name in name_list:
+                   driver.get('https://www.instagram.com/' + name + '/')
+                   self.driver.find_element_by_xpath("//button[contains(text(), 'フォローする')]").click()  
+
   def auto_like(self, hashtag):
     driver = self.driver      
     self.hashtag = hashtag      
@@ -43,10 +65,12 @@ class InstaBot:
     for pic_href in pic_hrefs:
             driver.get(pic_href)
             sleep(2)
+
             try:
                 sleep(2)
                 like_button = driver.find_element_by_xpath('//button[@class="wpO6b "]').click()
                 like_button().click()
+                print(str(count) + "回")
             except Exception as e:
                 sleep(2)
             unique_photos -= 1
