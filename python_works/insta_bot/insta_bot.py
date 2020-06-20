@@ -20,9 +20,30 @@ class InstaBot:
     sleep(2)
 
   def closeBrowser(self):
-    self.driver.close() 
+    self.driver.close()
 
-  def auto_suggested_follow(self):
+  def follow_back_tag_follow(self):
+          driver = self.driver
+          driver.get('https://www.instagram.com/explore/tags/%E3%83%95%E3%82%A9%E3%83%AD%E3%83%90%E7%B5%B6%E5%AF%BE/')
+
+          href_list = []
+          for i in range(1, 7):
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                sleep(2)  
+                a_tag = tag = driver.find_elements_by_tag_name('a')        
+                for elem in a_tag:
+                        target = elem.get_attribute('href')
+                        if '.com/p/' in target:
+                                href_list.append(target)
+                print(href_list)
+
+          for href in href_list:
+                  driver.get(href)
+                  driver.find_element_by_xpath("//button[contains(text(), 'フォローする')]").click()
+
+
+
+  def auto_suggested_users_follow(self):
            driver = self.driver
            driver.get('https://www.instagram.com/explore/people/suggested/')
            
