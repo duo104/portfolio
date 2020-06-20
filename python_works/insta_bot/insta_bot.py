@@ -70,7 +70,6 @@ class InstaBot:
                 sleep(2)
                 like_button = driver.find_element_by_xpath('//button[@class="wpO6b "]').click()
                 like_button().click()
-                print(str(count) + "回")
             except Exception as e:
                 sleep(2)
             unique_photos -= 1
