@@ -1,3 +1,5 @@
+***This bot works well in Japanese environment***
+
 Ver 1.3 2020/6/20/15:35
 
 フォロバ絶対のタグのついてる人をフォローする機能を追加しました。
@@ -7,9 +9,6 @@ Ver 1.2 2020/6/20 2:25
 
 おすすめユーザーに表示されている人を自動でフォローする機能を追加しました。
 コードには無理矢理感ありますが、細かい点に目を瞑れば問題ないかと・・・笑
-
-This bot works well in Japanese environment
-
 
 Ver 1.1 2020/6/18 16:35
 
